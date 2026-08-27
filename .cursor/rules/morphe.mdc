@@ -1,0 +1,52 @@
+---
+description: Morphe Android patching workspace — orchestrator rules, pipeline routing, patch conventions
+globs: ["**/*.kt", "**/*.java", "**/*.smali", "analysis/**", "paresh-patches/**"]
+alwaysApply: true
+---
+
+# Morphe Workspace Rules
+
+Full project context and all specialist agent prompts are in **AGENTS.md** at the repo root.
+Read AGENTS.md before doing any substantive work.
+
+## Core Rules
+
+1. **Check state first.** Before acting on any app, check what analysis files exist.
+   Never assume pipeline stage.
+
+2. **Never use obfuscated names in fingerprints.** Single-letter class/method names
+   (a, b, H) change every app update. Always derive fingerprints from stable smali
+   characteristics (SDK calls, string literals, access flags, return types).
+
+3. **Verify against smali, not jadx.** jadx can decompile incorrectly. The smali is
+   always the ground truth.
+
+4. **Never push without approval.** All git commits and pushes require explicit user OK.
+
+5. **Always use original APK.** CLI patching always uses the file in `analysis/<app>/apk/`.
+   Never use `base.apk` or extracted splits as CLI input.
+
+## Pipeline State Check
+
+```bash
+ls analysis/<app>/notes/recon.md analysis/<app>/decompiled/ analysis/<app>/smali/ \
+   paresh-patches/patches/src/main/kotlin/app/paresh/patches/<app>/ 2>/dev/null
+```
+
+## Patch Structure
+
+```
+paresh-patches/patches/src/main/kotlin/app/paresh/patches/<app>/
+├── shared/Constants.kt
+└── <category>/
+    ├── Fingerprints.kt
+    └── <Name>Patch.kt
+```
+
+## Quick Commands
+
+```bash
+cd paresh-patches && ./gradlew buildAndroid
+VER=$(grep "^version" paresh-patches/gradle.properties | cut -d= -f2 | tr -d ' ')
+java -jar morphe-cli.jar list-patches -p "paresh-patches/patches/build/libs/patches-${VER}.mpp" -pvo
+```
