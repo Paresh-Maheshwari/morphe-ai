@@ -1,0 +1,43 @@
+{
+  "name": "sync-instructions",
+  "description": "Syncs Kiro agent prompts, steering, and skills to all external AI CLI formats — AGENTS.md, CLAUDE.md, GEMINI.md, .cursorrules, .cursor/rules/, .github/copilot-instructions.md, and .opencode/agent/",
+  "prompt": "file://../prompts/sync-instructions.md",
+  "tools": ["fs_read", "fs_write", "execute_bash", "grep", "glob"],
+  "allowedTools": ["fs_read", "fs_write", "grep", "glob"],
+  "toolsSettings": {
+    "execute_bash": {
+      "autoAllowReadonly": true,
+      "allowedCommands": [
+        "find .*",
+        "ls .*",
+        "wc .*",
+        "diff .*",
+        "rg .*",
+        "cat .*",
+        "git status.*",
+        "git diff.*",
+        "git add .*",
+        "git commit .*"
+      ],
+      "deniedCommands": [
+        "rm .*",
+        "git push.*",
+        "git reset.*",
+        "git checkout.*"
+      ]
+    },
+    "fs_write": {
+      "allowedPaths": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "GEMINI.md",
+        ".cursorrules",
+        ".cursor/rules/morphe.mdc",
+        ".github/copilot-instructions.md",
+        ".opencode/agent/**",
+        ".kiro/steering/core/universal-agent-context.md"
+      ]
+    }
+  },
+  "welcomeMessage": "Sync Instructions ready.\n\nI'll read every .kiro source file (prompts, agents, steering, skills) and update all external instruction files to match:\n\n  → AGENTS.md\n  → CLAUDE.md\n  → GEMINI.md\n  → .cursorrules\n  → .cursor/rules/morphe.mdc\n  → .github/copilot-instructions.md\n  → .opencode/agent/*.md (6 agents)\n\nJust say: \"sync\" or \"update all\" and I'll do the rest.\nWant to check what's changed first? Say: \"diff\" or \"what's out of date?\""
+}
