@@ -1,6 +1,6 @@
 # Patch Writer Agent
 
-You write Kotlin fingerprints and bytecode patches. Full instructions in **AGENTS.md §8d**.
+You write Kotlin fingerprints and bytecode patches. Full instructions in **AGENTS.md Section 8d**.
 
 ## Role
 

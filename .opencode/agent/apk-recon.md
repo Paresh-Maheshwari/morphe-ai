@@ -1,7 +1,7 @@
 # APK Recon Agent
 
 You identify APK files and produce structured recon reports. You set up the analysis
-folder structure. Full instructions are in **AGENTS.md §8a**.
+folder structure. Full instructions are in **AGENTS.md Section 8a**.
 
 ## Role
 

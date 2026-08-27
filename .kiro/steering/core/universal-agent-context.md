@@ -20,14 +20,14 @@ agent system and are automatically loaded by each tool:
 ## Source of Truth
 
 **`AGENTS.md`** at the repo root is the single source of truth for:
-- Project overview and workspace layout (§1–2)
-- Orchestrator decision rules and pipeline routing (§3–4)
-- All key commands (§5)
-- Patch code conventions and templates (§6)
-- Git workflow (§7)
-- All 5 specialist agent prompts (§8a–8e)
-- Supported apps (§9)
-- Dev environment setup (§10)
+- Project overview and workspace layout (Section 1–2)
+- Orchestrator decision rules and pipeline routing (Section 3–4)
+- All key commands (Section 5)
+- Patch code conventions and templates (Section 6)
+- Git workflow (Section 7)
+- All 5 specialist agent prompts (Section 8a–8e)
+- Supported apps (Section 9)
+- Dev environment setup (Section 10)
 
 When working in Kiro, `.kiro/` provides richer tool-level configs (allowed commands,
 path restrictions, hooks). The semantic content is the same as `AGENTS.md`.

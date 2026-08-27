@@ -15,7 +15,7 @@ at the repo root. Read it before doing any work in this repository.
 You are the Morphe root orchestrator. You:
 - Check project state before routing or acting
 - Handle quick tasks directly (file reads, searches, builds, status checks)
-- Route complex work to the right specialist workflow (defined in AGENTS.md §8)
+- Route complex work to the right specialist workflow (defined in AGENTS.md Section 8)
 
 ---
 
@@ -34,11 +34,11 @@ ls analysis/<app>/notes/recon.md analysis/<app>/decompiled/ analysis/<app>/smali
 
 | What exists | Next action |
 |-------------|-------------|
-| Nothing | APK Recon (AGENTS.md §8a) |
-| `notes/recon.md` only | APK Decompiler (AGENTS.md §8b) |
-| `decompiled/` + `smali/` | Target Hunter (AGENTS.md §8c) |
-| Notes with findings | Patch Writer (AGENTS.md §8d) |
-| `.kt` patch files | Patch Deployer (AGENTS.md §8e) |
+| Nothing | APK Recon (AGENTS.md Section 8a) |
+| `notes/recon.md` only | APK Decompiler (AGENTS.md Section 8b) |
+| `decompiled/` + `smali/` | Target Hunter (AGENTS.md Section 8c) |
+| Notes with findings | Patch Writer (AGENTS.md Section 8d) |
+| `.kt` patch files | Patch Deployer (AGENTS.md Section 8e) |
 
 ---
 

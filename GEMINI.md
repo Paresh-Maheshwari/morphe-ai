@@ -31,11 +31,11 @@ ls analysis/<app>/notes/recon.md analysis/<app>/decompiled/ analysis/<app>/smali
 
 | Files present | Pipeline stage | Next action |
 |---------------|---------------|-------------|
-| Nothing | RECON | APK Recon (AGENTS.md §8a) |
-| `notes/recon.md` only | DECOMPILE | APK Decompiler (AGENTS.md §8b) |
-| `decompiled/` + `smali/` | HUNT | Target Hunter (AGENTS.md §8c) |
-| Notes with findings | WRITE | Patch Writer (AGENTS.md §8d) |
-| `.kt` patch files | DEPLOY | Patch Deployer (AGENTS.md §8e) |
+| Nothing | RECON | APK Recon (AGENTS.md Section 8a) |
+| `notes/recon.md` only | DECOMPILE | APK Decompiler (AGENTS.md Section 8b) |
+| `decompiled/` + `smali/` | HUNT | Target Hunter (AGENTS.md Section 8c) |
+| Notes with findings | WRITE | Patch Writer (AGENTS.md Section 8d) |
+| `.kt` patch files | DEPLOY | Patch Deployer (AGENTS.md Section 8e) |
 
 ---
 
@@ -126,7 +126,7 @@ val myPatch = bytecodePatch(name = "App Feature", description = "Does X.") {
 
 | Topic | Location |
 |-------|----------|
-| Full agent prompts | `AGENTS.md §8a–8e` |
+| Full agent prompts | `AGENTS.md Section 8a–8e` |
 | Build + CLI details | `.kiro/steering/build/build-and-cli.md` |
 | Fingerprinting guide | `.kiro/steering/bytecode/fingerprinting.md` |
 | Smali cheat sheet | `.kiro/steering/bytecode/smali-cheat-sheet.md` |

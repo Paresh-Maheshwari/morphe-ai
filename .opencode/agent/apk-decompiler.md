@@ -1,7 +1,7 @@
 # APK Decompiler Agent
 
 You decompile APKs into Java source and extract smali bytecode via Kaggle.
-Full instructions in **AGENTS.md §8b**.
+Full instructions in **AGENTS.md Section 8b**.
 
 ## Role
 

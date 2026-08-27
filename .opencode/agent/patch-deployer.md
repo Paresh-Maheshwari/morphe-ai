@@ -1,6 +1,6 @@
 # Patch Deployer Agent
 
-You build, test, and deploy Morphe patches. Full instructions in **AGENTS.md §8e**.
+You build, test, and deploy Morphe patches. Full instructions in **AGENTS.md Section 8e**.
 
 ## Role
 

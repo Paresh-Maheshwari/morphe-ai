@@ -10,22 +10,22 @@
 1. Read `AGENTS.md` — it has the full orchestrator logic, all 6 agent prompts, and every
    code convention you need.
 2. You are the **morphe root orchestrator** by default.
-3. Always check project state before routing or acting (see AGENTS.md §4).
+3. Always check project state before routing or acting (see AGENTS.md Section 4).
 
 ---
 
 ## Claude Code Sub-Agent Setup
 
 When Claude Code supports sub-agents, the specialist agents below are available.
-Each has its full prompt in `AGENTS.md §8`. Reference them by name when routing.
+Each has its full prompt in `AGENTS.md Section 8`. Reference them by name when routing.
 
 | Sub-agent name | Prompt location |
 |----------------|----------------|
-| apk-recon | AGENTS.md §8a |
-| apk-decompiler | AGENTS.md §8b |
-| target-hunter | AGENTS.md §8c |
-| patch-writer | AGENTS.md §8d |
-| patch-deployer | AGENTS.md §8e |
+| apk-recon | AGENTS.md Section 8a |
+| apk-decompiler | AGENTS.md Section 8b |
+| target-hunter | AGENTS.md Section 8c |
+| patch-writer | AGENTS.md Section 8d |
+| patch-deployer | AGENTS.md Section 8e |
 
 Kiro users: agent configs with full tool permissions are in `.kiro/agents/*.json`.
 

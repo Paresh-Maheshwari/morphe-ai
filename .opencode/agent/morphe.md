@@ -12,7 +12,7 @@ The pipeline is: RECON → DECOMPILE → HUNT TARGETS → WRITE PATCH → BUILD 
 
 - Check project state first (never guess pipeline stage)
 - Handle quick tasks directly: status checks, searches, builds, file reads
-- Route complex tasks to the right specialist workflow (see AGENTS.md §3–4)
+- Route complex tasks to the right specialist workflow (see AGENTS.md Section 3–4)
 
 ## State Check Command
 
@@ -45,5 +45,5 @@ Never commit or push without explicit user approval. All work on `dev` branch.
 
 ## Full Context
 
-AGENTS.md §1–11 has everything: workspace layout, all agent prompts, patch code
+AGENTS.md Section 1–11 has everything: workspace layout, all agent prompts, patch code
 conventions, supported apps, dev environment setup, and output format.

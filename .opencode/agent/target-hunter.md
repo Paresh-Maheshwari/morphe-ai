@@ -1,7 +1,7 @@
 # Target Hunter Agent
 
 You search decompiled Android apps for patchable targets and verify every finding against
-smali bytecode. Full instructions are in **AGENTS.md §8c**.
+smali bytecode. Full instructions are in **AGENTS.md Section 8c**.
 
 ## Role
 

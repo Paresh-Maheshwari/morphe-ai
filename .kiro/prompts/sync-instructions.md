@@ -26,11 +26,11 @@ You DO NOT:
 | Source | Path | Used in targets |
 |--------|------|----------------|
 | Orchestrator prompt | `AGENTS.md` | All targets |
-| apk-recon prompt | `.kiro/prompts/apk-recon.md` | AGENTS.md §8a, opencode agents |
-| apk-decompiler prompt | `.kiro/prompts/apk-decompiler.md` | AGENTS.md §8b, opencode agents |
-| target-hunter prompt | `.kiro/prompts/target-hunter.md` | AGENTS.md §8c, opencode agents |
-| patch-writer prompt | `.kiro/prompts/patch-writer.md` | AGENTS.md §8d, opencode agents |
-| patch-deployer prompt | `.kiro/prompts/patch-deployer.md` | AGENTS.md §8e, opencode agents |
+| apk-recon prompt | `.kiro/prompts/apk-recon.md` | AGENTS.md Section 8a, opencode agents |
+| apk-decompiler prompt | `.kiro/prompts/apk-decompiler.md` | AGENTS.md Section 8b, opencode agents |
+| target-hunter prompt | `.kiro/prompts/target-hunter.md` | AGENTS.md Section 8c, opencode agents |
+| patch-writer prompt | `.kiro/prompts/patch-writer.md` | AGENTS.md Section 8d, opencode agents |
+| patch-deployer prompt | `.kiro/prompts/patch-deployer.md` | AGENTS.md Section 8e, opencode agents |
 | apk-recon agent config | `.kiro/agents/apk-recon.json` | OpenCode agent metadata |
 | apk-decompiler agent config | `.kiro/agents/apk-decompiler.json` | OpenCode agent metadata |
 | target-hunter agent config | `.kiro/agents/target-hunter.json` | OpenCode agent metadata |
@@ -70,7 +70,7 @@ You DO NOT:
 
 ### Step 1 — Read all source files
 
-Read every source file listed in §2. For each one, note:
+Read every source file listed in Section 2. For each one, note:
 - File path
 - Key sections (role, execution sequence, output format, failure handling)
 - Description from agent JSON (the `description` field)
@@ -126,27 +126,27 @@ external tool files reference.
 
 **Structure to maintain:**
 ```
-§1  What This Repo Is          ← from .kiro/steering/core/project-overview.md
-§2  Workspace Layout           ← from .kiro/steering/core/morphe-quick-reference.md
-§3  The Six-Agent Pipeline     ← from AGENTS.md §3 / morphe.json routing table
-§4  Orchestrator Decision Rules ← from AGENTS.md §3 decision rules
-§5  Key Commands               ← from .kiro/steering/core/morphe-quick-reference.md
-§6  Patch Code Conventions     ← from .kiro/steering/patching/ + patch-anatomy skill
-§7  Git Workflow               ← from .kiro/steering/build/ git section
-§8  Specialist Agent Prompts   ← from .kiro/prompts/*.md (all 5 agents, inline)
-§9  Supported Apps             ← from .kiro/steering/core/ supported apps section
-§10 Development Environment    ← from .kiro/steering/build/build-and-cli.md
-§11 Output Style               ← from morphe.json welcomeMessage + AGENTS.md §4
+Section 1  What This Repo Is          ← from .kiro/steering/core/project-overview.md
+Section 2  Workspace Layout           ← from .kiro/steering/core/morphe-quick-reference.md
+Section 3  The Six-Agent Pipeline     ← from AGENTS.md Section 3 / morphe.json routing table
+Section 4  Orchestrator Decision Rules ← from AGENTS.md Section 3 decision rules
+Section 5  Key Commands               ← from .kiro/steering/core/morphe-quick-reference.md
+Section 6  Patch Code Conventions     ← from .kiro/steering/patching/ + patch-anatomy skill
+Section 7  Git Workflow               ← from .kiro/steering/build/ git section
+Section 8  Specialist Agent Prompts   ← from .kiro/prompts/*.md (all 5 agents, inline)
+Section 9  Supported Apps             ← from .kiro/steering/core/ supported apps section
+Section 10 Development Environment    ← from .kiro/steering/build/build-and-cli.md
+Section 11 Output Style               ← from morphe.json welcomeMessage + AGENTS.md Section 4
 ```
 
-**§8 inline specialist prompts** — extract from each `.kiro/prompts/*.md`:
-- §8a: apk-recon.md → Role, Execution Sequence, recon.md format, next step output
-- §8b: apk-decompiler.md → Role, Prerequisites, Execution Sequence, completion output
-- §8c: target-hunter.md → Role, Prerequisites, Search Priority, Smali Verification, Fingerprint Rules, Output Files
-- §8d: patch-writer.md → Role, Prerequisites, Execution Sequence, Build Failure Actions, Key Imports
-- §8e: patch-deployer.md → Role, Prerequisites, Execution Sequence, Git Rules, Completion Output
+**Section 8 inline specialist prompts** — extract from each `.kiro/prompts/*.md`:
+- Section 8a: apk-recon.md → Role, Execution Sequence, recon.md format, next step output
+- Section 8b: apk-decompiler.md → Role, Prerequisites, Execution Sequence, completion output
+- Section 8c: target-hunter.md → Role, Prerequisites, Search Priority, Smali Verification, Fingerprint Rules, Output Files
+- Section 8d: patch-writer.md → Role, Prerequisites, Execution Sequence, Build Failure Actions, Key Imports
+- Section 8e: patch-deployer.md → Role, Prerequisites, Execution Sequence, Git Rules, Completion Output
 
-Keep each §8 section concise but complete — the goal is a standalone reference.
+Keep each Section 8 section concise but complete — the goal is a standalone reference.
 
 ### 5b. CLAUDE.md
 
@@ -154,7 +154,7 @@ CLAUDE.md is the Claude Code entry point. It must:
 1. Point to AGENTS.md as the primary source ("Read that file first")
 2. Map each sub-agent name to its section in AGENTS.md
 3. List allowed tool permissions (from morphe.json toolsSettings)
-4. Provide the most-used bash snippets (from §5 of AGENTS.md)
+4. Provide the most-used bash snippets (from Section 5 of AGENTS.md)
 5. List context files from `.kiro/steering/` and `.kiro/skills/` as a table
 
 **Key content to extract:**
@@ -168,8 +168,8 @@ CLAUDE.md is the Claude Code entry point. It must:
 GEMINI.md is Gemini CLI's entry point. It must:
 1. Briefly describe the project (1 paragraph)
 2. State that full instructions are in AGENTS.md
-3. Include a self-contained pipeline routing table (extracted from AGENTS.md §4)
-4. Include a self-contained key commands block (extracted from AGENTS.md §5)
+3. Include a self-contained pipeline routing table (extracted from AGENTS.md Section 4)
+4. Include a self-contained key commands block (extracted from AGENTS.md Section 5)
 5. Include patch code rules (no-obfuscated-names + smali-first + filter-order)
 6. Git safety rules
 7. A context files table pointing to `.kiro/` paths
@@ -222,7 +222,7 @@ Source: the corresponding `.kiro/prompts/<name>.md`
 # <Agent Name>
 
 <One sentence role from agent JSON description>
-Full instructions in **AGENTS.md §8<letter>**.
+Full instructions in **AGENTS.md Section 8<letter>**.
 
 ## Role
 <2-3 bullet does/does-not from prompt>
@@ -252,7 +252,7 @@ When updating an OpenCode agent file:
 This file just needs to stay accurate as a map. Keep its table up to date:
 - Column 1: Tool name
 - Column 2: Which files it reads
-- The "Source of Truth" section should list all §N of AGENTS.md
+- The "Source of Truth" section should list all Section N of AGENTS.md
 
 ---
 
@@ -292,7 +292,7 @@ After reading a source:
 📖 Read: <path> (<line count> lines)
 ```
 
-Final summary as shown in §4 Step 4.
+Final summary as shown in Section 4 Step 4.
 
 ---
 

@@ -38,11 +38,11 @@ ls analysis/<app>/notes/recon.md analysis/<app>/decompiled/ analysis/<app>/smali
 
 | What exists | Next step |
 |-------------|-----------|
-| Nothing | Run apk-recon workflow (see AGENTS.md §8a) |
-| `notes/recon.md` only | Run apk-decompiler workflow (see AGENTS.md §8b) |
-| `decompiled/` + `smali/` | Run target-hunter workflow (see AGENTS.md §8c) |
-| Notes with findings | Run patch-writer workflow (see AGENTS.md §8d) |
-| `.kt` patch files exist | Run patch-deployer workflow (see AGENTS.md §8e) |
+| Nothing | Run apk-recon workflow (see AGENTS.md Section 8a) |
+| `notes/recon.md` only | Run apk-decompiler workflow (see AGENTS.md Section 8b) |
+| `decompiled/` + `smali/` | Run target-hunter workflow (see AGENTS.md Section 8c) |
+| Notes with findings | Run patch-writer workflow (see AGENTS.md Section 8d) |
+| `.kt` patch files exist | Run patch-deployer workflow (see AGENTS.md Section 8e) |
 
 ---
 
